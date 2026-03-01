@@ -1,0 +1,9 @@
+{
+  "db": "UserDB",
+  "table": "users",
+  "firstName": "Bob",
+  "lastName": "Jones",
+  "email": "bob.jones@example.com",
+  "phone": "987-654-3210",
+  "active": 1
+}

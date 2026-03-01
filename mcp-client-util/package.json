@@ -4,7 +4,10 @@
   "description": "Utility client for MCP server API integration",
   "main": "mcpClient.js",
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
     "axios": "^1.6.0",
-    "mcp-server": "file:.."
+    "dotenv": "^16.6.1",
+    "mcp-server": "file:..",
+    "simple-git": "^3.32.3"
   }
 }
