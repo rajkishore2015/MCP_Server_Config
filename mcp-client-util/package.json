@@ -1,0 +1,10 @@
+{
+  "name": "mcp-client-util",
+  "version": "1.0.0",
+  "description": "Utility client for MCP server API integration",
+  "main": "mcpClient.js",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "mcp-server": "file:.."
+  }
+}
