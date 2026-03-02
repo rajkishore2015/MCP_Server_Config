@@ -3,3 +3,5 @@ node_modules/
 .env
 *.log
 mcp-client-util/node_modules/
+package-lock.json
+mcp-client-util/package-lock.json
