@@ -94,6 +94,17 @@ async function addMySQLUser(db, table, name, email) {
   }
 }
 
+// POST /api/mysql/query  { db, sql }
+async function runMySQLQuery(db, sql) {
+  try {
+    const response = await axios.post(`${MCP_SERVER_URL}/api/mysql/query`,
+      { db, sql }, { timeout: 10000 });
+    return response.data;
+  } catch (err) {
+    throw err.response ? err.response.data : err;
+  }
+}
+
 // POST /api/mysql/create-db  { dbName }
 async function createMySQLDatabase(dbName) {
   try {
@@ -229,6 +240,7 @@ module.exports = {
   getMySQLUsers,
   addMySQLUser,
   createMySQLDatabase,
+  runMySQLQuery,
   // MSSQL (via MCP server)
   getMSSQLUsers,
   addMSSQLUser,

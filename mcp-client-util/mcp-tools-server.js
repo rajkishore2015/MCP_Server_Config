@@ -19,6 +19,7 @@ const {
   getMySQLUsers,
   addMySQLUser,
   createMySQLDatabase,
+  runMySQLQuery,
   getMSSQLUsers,
   addMSSQLUser,
   createMSSQLDatabase,
@@ -168,6 +169,24 @@ server.tool(
   { dbName: z.string().describe('Name for the new database') },
   async ({ dbName }) => {
     const data = await createMySQLDatabase(dbName);
+    return {
+      content: [{
+        type: 'text',
+        text: JSON.stringify(data, null, 2),
+      }],
+    };
+  }
+);
+
+server.tool(
+  'mysql_query',
+  'Execute a raw SQL query on a MySQL database (e.g. SELECT, SHOW TABLES, DESCRIBE)',
+  {
+    db : z.string().describe('MySQL database name'),
+    sql: z.string().describe('SQL query to execute'),
+  },
+  async ({ db, sql }) => {
+    const data = await runMySQLQuery(db, sql);
     return {
       content: [{
         type: 'text',

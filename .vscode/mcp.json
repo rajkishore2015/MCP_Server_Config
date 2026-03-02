@@ -1,8 +1,10 @@
 {
   "servers": {
-    "mcp-server": {
-      "type": "http",
-      "url": "http://localhost:3000"
+    "mcp-tools-server": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["mcp-client-util/mcp-tools-server.js"],
+      "cwd": "${workspaceFolder}"
     }
   }
 }

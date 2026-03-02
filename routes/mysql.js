@@ -24,6 +24,17 @@ router.post('/users', (req, res) => {
   });
 });
 
+router.post('/query', (req, res) => {
+  const dbName = req.body.db || process.env.MYSQL_DATABASE;
+  const { sql } = req.body;
+  if (!sql) return res.status(400).json({ error: 'sql is required' });
+  const pool = getMySQLPool(dbName);
+  pool.query(sql, (err, results) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(results);
+  });
+});
+
 router.post('/create-db', (req, res) => {
   const { dbName } = req.body;
   const connection = mysql.createConnection({

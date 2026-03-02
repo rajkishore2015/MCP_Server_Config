@@ -1,0 +1,25 @@
+{
+    "jira-plugin.workingProject": "",
+    "github.copilot.chat.agent.thirdPartyTools": true,
+    "mcp": {
+        "servers": {
+            "mcp-tools-server": {
+                "tools": {
+                    "mysql_query": true,
+                    "mysql_get_users": true,
+                    "mysql_add_user": true,
+                    "mysql_create_database": true,
+                    "mssql_get_users": true,
+                    "mssql_add_user": true,
+                    "mssql_create_database": true,
+                    "jira_get_issues": true,
+                    "jira_create_story": true,
+                    "jira_create_epic": true,
+                    "jira_create_subtask": true,
+                    "git_get_status": true
+                }
+            }
+        }
+    },
+    "chat.mcp.access": "all"
+}
